@@ -6,4 +6,4 @@ Bits and Chisels is a Fabric mod for modern Minecraft that lets you remove small
 
 This is a quick fork I made when I wanted to make small lightbulb and lamp style lights, but the light value never got above 2. I don't know Java or Minecraft modding at all.
 
-In fact, I never found a way to build the jar, cause the whole shit with brach not working.
+Still in the process of trying to find how to build the jar
