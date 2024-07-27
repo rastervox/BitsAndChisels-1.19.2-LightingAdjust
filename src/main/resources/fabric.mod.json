@@ -3,13 +3,14 @@
   "id": "bitsandchisels",
   "version": "2.7.0",
   "name": "BitsAndChisels",
-  "description": "Turn Blocks Into Small Bits With Chisels; Build All The Things",
+  "description": "Turn Blocks Into Small Bits With Chisels; Build All The Things. Tiny Build Lighting Adjustment Edition.",
   "authors": [
-    "cool_mineman"
+    "cool_mineman",
+	"rastervox"
   ],
   "contact": {
-    "homepage": "https://github.com/CoolMineman/BitsAndChisels",
-    "sources": "https://github.com/CoolMineman/BitsAndChisels"
+    "homepage": "https://github.com/rastervox/BitsAndChisels-1.19.2-LightingAdjust",
+    "sources": "https://github.com/rastervox/BitsAndChisels-1.19.2-LightingAdjust"
   },
   "license": "CC0-1.0",
   "icon": "assets/bitsandchisels/icon.png",
