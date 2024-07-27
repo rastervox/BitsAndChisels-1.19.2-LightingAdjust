@@ -111,11 +111,18 @@ public class BitsBlockEntity extends BlockEntity implements RenderAttachmentBloc
         BitSetVoxelSet set = new BitSetVoxelSet(16, 16, 16);
         BlockState firststate = states[0][0][0];
         int totalLight = 0;
+		int maxLight = 0;
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 for (int k = 0; k < 16; k++) {
                     BlockState state = states[i][j][k];
                     totalLight += state.getLuminance();
+					
+					if (maxLight <  state.getLuminance())
+					{
+						maxLight = state.getLuminance();
+					}
+					
                     if (!state.isAir()) {
                         set.set(i, j, k);
                     }
@@ -131,7 +138,7 @@ public class BitsBlockEntity extends BlockEntity implements RenderAttachmentBloc
             if (fullcube) {
                 world.setBlockState(pos, states[0][0][0]);
             }
-            int targetlight = MathHelper.clamp((int)(Math.sqrt(totalLight) * 0.0625 /*16/sqrt(4096)*/), 0, 16);
+            int targetlight = MathHelper.clamp((int)(Math.sqrt(totalLight) * 0.25 /*Originally 0.0625 [16/sqrt(4096)], quick adjusted for small bit clusters, should be in a config but I am a novice*/), 0, maxLight/*Normally 16, but now maxed to max value bit*/);
             if (state.get(BitsBlock.LIGHT_LEVEL) != targetlight) {
                 world.setBlockState(pos, state.with(BitsBlock.LIGHT_LEVEL, targetlight), 0);
             }
